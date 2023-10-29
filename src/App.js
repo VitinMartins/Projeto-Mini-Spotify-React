@@ -7,6 +7,7 @@ import Footer from './components/Footer/Footer'
 import {Routes, Route} from 'react-router-dom'
 import CardContainer from './components/CardContainer/CardContainer'
 import CardDetail from './components/CardDetail/CardDetail'
+import NewPlaylist from './components/NewPlaylist/NewPlaylist'
 import './App.css'
 
 
@@ -20,7 +21,8 @@ export default function App() {
         <Route path='/register' element={<Registro/>}></Route>
         <Route path='/login' element={<Login/>}></Route>
         <Route path='/faq' element={<Faq/>}></Route>
-        <Route path='/playlists/:name' element={<CardDetail/>}></Route>
+        <Route path='/playlists/:id' element={<CardDetail/>}></Route>
+        <Route path='/playlists/add' element={<NewPlaylist/>}></Route>
     </Routes>
     
     <Footer></Footer>

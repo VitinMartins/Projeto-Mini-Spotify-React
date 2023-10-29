@@ -1,0 +1,238 @@
+{
+  "users": [
+    {
+      "id": 0,
+      "nome": "",
+      "email": "",
+      "senha": ""
+    },
+    {
+      "id": 1,
+      "nome": "Vitor",
+      "email": "vitinhuman@gmail.com",
+      "senha": "12345678"
+    }
+  ],
+  "mscs": [
+    {
+      "id": 1,
+      "title": "Better",
+      "audio": "assets/audio/Better.mp3",
+      "author": "Jeremy Passion"
+    },
+    {
+      "id": 2,
+      "title": "BeVerly Hills BoYfRiEnd",
+      "audio": "assets/audio/BoyFriend.mp3",
+      "author": "Claire Rosinkranz"
+    },
+    {
+      "id": 3,
+      "title": "Blueberry",
+      "audio": "assets/audio/Blueberry.mp3",
+      "author": "MAX; SUGA"
+    },
+    {
+      "id": 4,
+      "title": "Down For You",
+      "audio": "assets/audio/DownforYou.mp3",
+      "author": "Cosmos Midnight"
+    },
+    {
+      "id": 5,
+      "title": "Feelings",
+      "audio": "assets/audio/Feelings.mp3",
+      "author": "Lauv"
+    },
+    {
+      "id": 6,
+      "title": "Five More Minutes",
+      "audio": "assets/audio/FiveMoreMinutes.mp3",
+      "author": "Jonas Brothers"
+    },
+    {
+      "id": 7,
+      "title": "Glad You Exist",
+      "audio": "assets/audio/GladYouExist.mp3",
+      "author": "Dan + Shay"
+    },
+    {
+      "id": 8,
+      "title": "Heaven",
+      "audio": "assets/audio/Heaven.mp3",
+      "author": "Pink Sweat"
+    },
+    {
+      "id": 9,
+      "title": "imagine if",
+      "audio": "assets/audio/imagineif.mp3",
+      "author": "Gnash"
+    },
+    {
+      "id": 10,
+      "title": "Mariposa",
+      "audio": "assets/audio/Mariposa.mp3",
+      "author": "Peach Tree Rascals"
+    },
+    {
+      "id": 11,
+      "title": "Mean It",
+      "audio": "assets/audio/MeanIt.mp3",
+      "author": "Lauv; Lany"
+    },
+    {
+      "id": 12,
+      "title": "Oops",
+      "audio": "assets/audio/Oops.mp3",
+      "author": "Litter Mix; Charlie Puth"
+    },
+    {
+      "id": 13,
+      "title": "Painkiller",
+      "audio": "assets/audio/Painkiller.mp3",
+      "author": "Ruel"
+    },
+    {
+      "id": 14,
+      "title": "Sleep and Friends",
+      "audio": "assets/audio/SleepandFriends.mp3",
+      "author": "David Hugo"
+    },
+    {
+      "id": 15,
+      "title": "Summer on You",
+      "audio": "assets/audio/SummeronYou.mp3",
+      "author": "PRETTYMUCH"
+    },
+    {
+      "id": 16,
+      "title": "Sweet Creature",
+      "audio": "assets/audio/SweetCreature.mp3",
+      "author": "Harry Styles"
+    }
+  ],
+  "playlists": [
+    {
+      "id": 1,
+      "image": "assets/image/Imagem1.jpg",
+      "name": "playlist1",
+      "description": "",
+      "userId": 0
+    },
+    {
+      "id": 2,
+      "image": "assets/image/imagem2.jpg",
+      "name": "playlist2",
+      "description": "",
+      "userId": 0
+    },
+    {
+      "id": 3,
+      "image": "assets/image/imagem3.jpg",
+      "name": "playlist3",
+      "description": "",
+      "userId": 0
+    },
+    {
+      "id": 4,
+      "image": "assets/image/imagem4.jpg",
+      "name": "playlist4",
+      "description": "",
+      "userId": 0
+    },
+    {
+      "id": 5,
+      "image": "assets/image/imagem5.jpg",
+      "name": "playlist5",
+      "description": "",
+      "userId": 0
+    },
+    {
+      "id": 6,
+      "image": "assets/image/imagem6.jpg",
+      "name": "playlist6",
+      "description": "",
+      "userId": 0
+    },
+    {
+      "id": 7,
+      "image": "assets/image/imagem7.jpg",
+      "name": "playlist7",
+      "description": "",
+      "userId": 0
+    },
+    {
+      "id": 8,
+      "image": "assets/image/imagem8.jpg",
+      "name": "playlist8",
+      "description": "",
+      "userId": 0
+    }
+  ],
+  "music_playlist": [
+    {
+      "mscId": 1,
+      "playlistId": 1
+    },
+    {
+      "mscId": 2,
+      "playlistId": 1
+    },
+    {
+      "mscId": 3,
+      "playlistId": 2
+    },
+    {
+      "mscId": 4,
+      "playlistId": 2
+    },
+    {
+      "mscId": 5,
+      "playlistId": 3
+    },
+    {
+      "mscId": 6,
+      "playlistId": 3
+    },
+    {
+      "mscId": 7,
+      "playlistId": 4
+    },
+    {
+      "mscId": 8,
+      "playlistId": 4
+    },
+    {
+      "mscId": 9,
+      "playlistId": 5
+    },
+    {
+      "mscId": 10,
+      "playlistId": 5
+    },
+    {
+      "mscId": 11,
+      "playlistId": 6
+    },
+    {
+      "mscId": 12,
+      "playlistId": 6
+    },
+    {
+      "mscId": 13,
+      "playlistId": 7
+    },
+    {
+      "mscId": 14,
+      "playlistId": 7
+    },
+    {
+      "mscId": 15,
+      "playlistId": 8
+    },
+    {
+      "mscId": 16,
+      "playlistId": 8
+    }
+  ]
+}

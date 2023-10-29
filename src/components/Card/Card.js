@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom'
 
 export default function Card(props) {
 
-    let path = `/playlists/${props.name}`;
+    let path = `/playlists/${props.id}`;
 
   return (
     <Link to={path}>

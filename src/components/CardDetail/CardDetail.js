@@ -1,37 +1,49 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import './CardDetail.css'
 import { useParams } from 'react-router-dom'
-import { playlists } from '../../DataBase'
+import axios from 'axios'
 
 
 export default function CardDetail(props) {
 
-    let {name} = useParams()
+    const {id} = useParams()
+    const [playlist, setPlaylist] = React.useState(null)
+    const [musics, setMusics] = React.useState([])
 
-    let playlist
-    for(let i = 0; i < playlists.length; i++){
-        if (playlists[i].name === name){
-            playlist = playlists[i]
-        }
+    const getPlaylist = async() => {
+        const response = await axios.get(`http://localhost:3001/playlists/${id}`)
+        setPlaylist(response.data)
     }
 
-    let musics = []
-    for(let i = 0; i < playlist.musics.length; i++){
-        musics.push(
-            <li className='item-playlist'>
-                <h3>{playlist.musics[i].title}</h3>
-                <span>{playlist.musics[i].author}</span>
-                <audio src={playlist.musics[i].audio} controls></audio>
-            </li>
-        )
+    const getMusics = async() => {
+        const response = await axios.get(`http://localhost:3001/playlists/${id}/music_playlist?_expand=msc`)
+        let musics = []
+        response.data.map(musicPlaylist => musics.push(musicPlaylist.msc))
+        setMusics(musics)
     }
+
+    useEffect(()=>{
+        getPlaylist()
+        getMusics()
+    }, [])
+
+    const carregarImagem = () => playlist !== null ? require('../../' + playlist.image) : '';
 
   return (
+    <>
     <div id='container'>
-        <img id='img-cover' src={playlist.image} alt='cover'></img>
+        <img id='img-cover' src={carregarImagem()} alt='cover'></img>
         <ul id='list-playlist'>
-            {musics}
+            {musics.map( music =>
+                <li className='item-playlist'>
+                    <h3>{music.title}</h3>
+                    <span>{music.author}</span>
+                    <audio src={require('../../'+music.audio)} controls></audio>
+                </li>
+            )}
         </ul>
     </div>
+    <button>Editar</button>
+    </>
   )
 }

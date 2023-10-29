@@ -1,8 +1,9 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import Card from '../Card/Card'
 import './CardContainer.css'
-import { playlists } from '../../DataBase'
 import Carousel from 'react-elastic-carousel'
+import axios from 'axios'
+import { Link } from 'react-router-dom'
 
 
 const breakPoints = [
@@ -13,10 +14,29 @@ const breakPoints = [
 ]
 
 export default function CardContainer() {
+
+  const [playlists, setPlaylists] = React.useState([])
+
+
+  const getPlaylists = async() => {
+    var userId = localStorage.getItem('userId')
+    
+    if (userId == null) userId = 0
+
+    const response = await axios.get(`http://localhost:3001/users/${userId}/playlists`)
+    setPlaylists(response.data)
+  }
+
+  useEffect(()=>{
+    getPlaylists()
+  }, [])
+  
   return (
-    <Carousel className='content-menu' breakPoints={breakPoints}>
-      {playlists.map(playlist => <Card img={playlist.image} name={playlist.name}></Card>)}
-    </Carousel>
+    <>
+      <Link to={'/playlists/add'}><button>Nova Playlist</button></Link>
+      <Carousel className='content-menu' breakPoints={breakPoints}>
+        {playlists.map(playlist => <Card key={playlist.id} img={require('../../'+playlist.image)} id={playlist.id} name={playlist.name}></Card>)}
+      </Carousel>
+    </>
   )
 }
-
