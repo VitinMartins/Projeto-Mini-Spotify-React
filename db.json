@@ -114,7 +114,7 @@
   "playlists": [
     {
       "image": "assets/image/Imagem1.jpg",
-      "name": "Playlist 1",
+      "name": "Playlist 1 teste",
       "userId": 0,
       "id": 1
     },
@@ -196,6 +196,24 @@
       "name": "ksjflkdsjflkjfls",
       "userId": "1",
       "id": 20
+    },
+    {
+      "image": "assets/image/logo192.png",
+      "name": "Rtfhuiub",
+      "userId": "1",
+      "id": 21
+    },
+    {
+      "image": "assets/image/logo192.png",
+      "name": "Rtfhuiub",
+      "userId": "1",
+      "id": 22
+    },
+    {
+      "image": "assets/image/logo192.png",
+      "name": "Rtfhuiub",
+      "userId": "1",
+      "id": 23
     }
   ],
   "music_playlist": [
@@ -348,6 +366,36 @@
       "mscId": "3",
       "playlistId": 20,
       "id": 36
+    },
+    {
+      "mscId": "3",
+      "playlistId": "1",
+      "id": 37
+    },
+    {
+      "mscId": "4",
+      "playlistId": "1",
+      "id": 38
+    },
+    {
+      "mscId": "6",
+      "playlistId": "1",
+      "id": 39
+    },
+    {
+      "mscId": "2",
+      "playlistId": 21,
+      "id": 40
+    },
+    {
+      "mscId": "2",
+      "playlistId": 22,
+      "id": 41
+    },
+    {
+      "mscId": "2",
+      "playlistId": 23,
+      "id": 42
     }
   ]
 }
