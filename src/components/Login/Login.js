@@ -15,7 +15,7 @@ export default function Login() {
         const user = res.data[0];
         if (user) {
           if (user.senha === senha) {
-            localStorage.setItem('usuarioLogado', JSON.stringify(user));
+            localStorage.setItem('userId', user.id);
             navigate('/');
           } else {
             alert("Dados inválidos!");

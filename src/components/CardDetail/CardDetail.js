@@ -46,23 +46,34 @@ export default function CardDetail(props) {
         setDisplayForm(!displayForm)
     }
 
+    const removeMusic = async(e) => {
+        const response = await axios.delete(`http://localhost:3001/music_playlist/${e.target.value}`)
+        console.log(response.data)
+        getMusics()
+    }
+
     const getMusics = async () => {
         const response = await axios.get(`http://localhost:3001/playlists/${id}/music_playlist?_expand=msc`)
         let musics = []
-        response.data.map(musicPlaylist => musics.push(musicPlaylist.msc))
+        response.data.map(musicPlaylist => musics.push(musicPlaylist))
         setMusics(musics)
     }
 
     const handleSubmit = async (e) => {
         e.preventDefault();
         await axios.put(`http://localhost:3001/playlists/${id}`, {
-            "id": playlist.id,
             "image": playlist.image,
             "name": playlistName,
             "userId": playlist.userId
         })
-        await axios.post()
+        for (let i = 0; i < selectedMusics.length; i++) {
+            await axios.post(`http://localhost:3001/music_playlist/`, {
+              mscId: selectedMusics[i],
+              playlistId: id
+            })
+          }
         getPlaylist()
+        getMusics()
     }
 
     useEffect(() => {
@@ -80,9 +91,12 @@ export default function CardDetail(props) {
                 <ul id='list-playlist'>
                     {musics.map(music =>
                         <li className='item-playlist'>
-                            <h3>{music.title}</h3>
-                            <span>{music.author}</span>
-                            <audio src={require('../../' + music.audio)} controls></audio>
+                            <h3>{music.msc.title}</h3>
+                            <span>{music.msc.author}</span>
+                            <audio src={require('../../' + music.msc.audio)} controls></audio>
+                            {displayForm &&(
+                                <button onClick={removeMusic} value={music.id}>remover musica</button>
+                            )}
                         </li>
                     )}
                 </ul>
@@ -106,10 +120,13 @@ export default function CardDetail(props) {
                     <br />
 
                     <button type="submit">atualizar</button>
+                    <br />
+                    <br />
+                    <br />
+                    <br />
                 </form>
 
             }
-            <button>remover musica</button>
         </>
     )
 }

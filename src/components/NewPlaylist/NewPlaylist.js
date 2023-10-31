@@ -35,12 +35,8 @@ function PlaylistForm() {
 
     if (userId == null) {
       alert('Voce prescisa estar logado')
-      userId = 1
+      return
     }
-
-    const playlist_resp = await axios.get(`http://localhost:3001/playlists`)
-    let playlists = playlist_resp.data
-    let nextId = playlists[playlists.length - 1].id + 1
 
     const respose = await axios.post(`http://localhost:3001/playlists`, {
       image: "assets/image/logo192.png",
