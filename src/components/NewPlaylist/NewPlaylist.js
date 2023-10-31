@@ -20,7 +20,7 @@ function PlaylistForm() {
     setSelectedMusics(selectedOptions);
   };
 
-  const listMusics = async() =>{
+  const listMusics = async () => {
     const response = await axios.get(`http://localhost:3001/mscs`)
     setSelectMusics(response.data)
   }
@@ -32,27 +32,32 @@ function PlaylistForm() {
     console.log('Músicas selecionadas:', selectedMusics);
 
     var userId = localStorage.getItem('userId')
-    
+
     if (userId == null) {
-        alert('Voce prescisa estar logado')
-        userId = 0
+      alert('Voce prescisa estar logado')
+      userId = 1
     }
-    
+
     const playlist_resp = await axios.get(`http://localhost:3001/playlists`)
     let playlists = playlist_resp.data
     let nextId = playlists[playlists.length - 1].id + 1
 
     const respose = await axios.post(`http://localhost:3001/playlists`, {
-        id: nextId,
-        image: "assets/image/logo192.png",
-        name: playlistName,
-        userId: userId
+      image: "assets/image/logo192.png",
+      name: playlistName,
+      userId: userId
     })
-
+    
+    for (let i = 0; i < selectedMusics.length; i++) {
+      await axios.post(`http://localhost:3001/music_playlist/`, {
+        mscId: selectedMusics[i],
+        playlistId: respose.data.id
+      })
+    }
     console.log(respose.data)
   };
 
-  useEffect(()=>{
+  useEffect(() => {
     listMusics()
   }, [])
 
@@ -73,7 +78,7 @@ function PlaylistForm() {
       <label>
         Selecione Músicas:
         <select multiple value={selectedMusics} onChange={handleSongChange}>
-            {listSelectMusics.map(music => <option value={music.id}>{music.title}</option>)}
+          {listSelectMusics.map(music => <option value={music.id}>{music.title}</option>)}
         </select>
       </label>
       <br />
