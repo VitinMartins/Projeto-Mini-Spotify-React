@@ -1,0 +1,102 @@
+ .container {
+    background-color: #000000;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    width: 400px;
+    min-height: 100vh;
+    margin-left: 30%;
+  }
+
+  .logo {
+    text-align: center;
+    color: #1db954; /* Cor do texto do logo */
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 30px; /* Espaçamento inferior para o logo */
+  }
+
+  .logo .icon {
+  font-size: 29,px;
+  vertical-align: middle;
+}
+
+  .container h2 {
+    text-align: center;
+    color: #fff; /* Cor do texto do título */
+    margin-bottom: 20px; /* Espaçamento inferior para o título */
+  }
+
+  .form-group {
+    margin-bottom: 15px;
+  }
+
+  .form-group label {
+    display: block;
+    margin-bottom: 5px;
+    color: #fff; /* Cor do texto das labels */
+  }
+
+  .form-group input {
+    width: 90%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    color: #000; /* Cor do texto nos campos */
+  }
+
+  .form-group button {
+    width: 100%;
+    padding: 10px;
+    background-color: #1db954;
+    color: #fff;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    margin-top: 25%;
+  }
+
+  .form-group button:hover {
+    background-color: #1db954;
+  }
+
+  .form-group .checkbox-group {
+    display: flex;
+    align-items: center;
+    color: #fff; /* Cor do texto do checkbox */
+  }
+
+  .form-group .checkbox-group input[type="checkbox"] {
+    margin-right: -110px;
+  }
+
+  .social-buttons {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px; /* Espaçamento superior para os botões sociais */
+  }
+
+  .social-buttons button {
+    background-color: #1877f2;
+    color: #ae1f1f;
+    margin: 8px 0;
+    width: 90%;
+    min-height: 4vh;
+  }
+  .social-buttons button.facebook {
+    background-color: #3b92f0e4;
+    color: #ffffff;
+  }
+
+  .social-buttons button.google {
+    background-color: #ffffff;
+    color: #000000;
+  }
+
+  .or-divider {
+    text-align: center;
+    color: #fff;
+    font-weight: 50;
+    margin: -10px 0; /* Espaçamento superior e inferior para o divisor "Ou" */
+  }
